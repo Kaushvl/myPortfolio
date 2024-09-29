@@ -45,21 +45,30 @@
  }
 
  .container{
-    padding: 5px 10%;
+    padding: 45px 10%;
  }
 
 
- nav{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
- }
+ nav {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   flex-wrap: wrap;
+   position: fixed;  /* Fixed the navbar to make it static */
+   top: 0;
+   left: 0;
+   width: 100%;      /* Full width */
+   z-index: 1000;    /* Keep it above other elements */
+   padding: 10px 20px; /* Add padding for spacing */
+   background-color: var(--secondary-color); /* Make it solid to avoid transparency */
+   box-sizing: border-box;
+}
+
 
 
  .logo{
-    width: 440px;
-    height: 140px;
+    width: 400px;
+    height: 60px;
  }
 
  .icon-container{
@@ -135,7 +144,10 @@
    text-decoration: underline;
    text-decoration-color: var(--lookcolour);
  }
- 
+ #home-logo {
+   display: block; /* Ensure it's visible initially */
+   transition: display 0.5s ease;
+}
 
  @keyframes erase{
       0% {
@@ -682,4 +694,57 @@ nav .fa-solid{
    color: #61b752;
    margin-top: -40px;
    display: block;
+}
+
+#experience {
+   padding: 25px 0;
+   color: #ababab;
+}
+
+.experience-list {
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+   grid-gap: 40px;
+   margin-top: 50px;
+}
+
+.experience-item {
+   background: #262626;
+   padding: 40px;
+   font-size: 13px;
+   font-weight: 300;
+   border-radius: 10px;
+   transition: background 0.5s, transform 0.5s;
+}
+
+.experience-item h3 {
+   font-size: 20px;
+   font-weight: 500;
+   margin-bottom: 15px;
+}
+
+.experience-item .date {
+   font-style: italic;
+   margin-bottom: 15px;
+   color: #ff004f;
+}
+
+.experience-item ul {
+   list-style-type: none;
+   padding: 0;
+}
+
+.experience-item li {
+   margin-bottom: 10px;
+}
+
+.experience-item:hover {
+   background: #ff004f;
+   transform: translateY(-10px);
+}
+.closing-note {
+   margin-top: 20px;
+   font-size: 18px;
+   font-style: italic;
+   color: var(--primary-color);
 }

@@ -107,6 +107,17 @@ if(isMobile){
     })
 }
 
+window.addEventListener('scroll', function() {
+    var logo = document.querySelector('.logo');
+    var headerHeight = document.querySelector('#header').offsetHeight;
+
+    // Hide logo after leaving the home section (header)
+    if (window.scrollY > headerHeight) {
+        logo.style.display = 'none';
+    } else {
+        logo.style.display = 'block';
+    }
+});
 
 
 
